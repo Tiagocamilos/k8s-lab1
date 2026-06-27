@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todolist-deployment
+  namespace: todolist-grupo-02
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: todolist
+
+  template:
+    metadata:
+      labels:
+        app: todolist
+
+
+    spec:
+      containers:
+      - name: todolist
+        image: andreffcastro/k8s-todolist:1.0.0
+        ports:
+          - containerPort: 5000
+
+        envFrom:
+          - configMapRef:
+              name: todolist-config
+
+          - secretRef:
+              name: todolist-secret
+
+        volumeMounts:
+          - name: todolist-pvc
+            mountPath: /data
+      
+      volumes:
+        - name: todolist-pvc
+          persistentVolumeClaim:
+            claimName: todolist-pvc
