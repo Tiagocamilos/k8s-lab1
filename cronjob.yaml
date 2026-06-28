@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: CronJob
+
+metadata:
+  name: todolist-cronjob
+  namespace: todolist-grupo-02
+
+spec:
+  schedule: "*/5 * * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: cleanup-task
+            image: curlimages/curl:8.16.0
+            env: 
+              - name: CLEANUP_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    name: todolist-secret
+                    key: CLEANUP_TOKEN
+
+            command:
+              - sh
+              - -c
+              - 'curl -sf -X POST -H "X-Cleanup-Token: ${CLEANUP_TOKEN}" http://todolist-service/cleanup'
+
