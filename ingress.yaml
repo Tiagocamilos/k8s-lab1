@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: todolist-ingress
+  namespace: todolist-grupo-02
+
+spec:
+  ingressClassName: nginx
+
+  rules:
+  - host: todolist-grupo-02.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: todolist-service
+            port:
+              number: 80
