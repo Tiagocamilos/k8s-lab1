@@ -3,10 +3,10 @@
 Laboratório desenvolvido utilizando Kubernetes (Kind) para implantação da aplicação TodoList.
 
 ## Baixar o Projeto
-```bashgit clone https://github.com/Tiagocamilos/k8s-lab1.git ```
+```git clone https://github.com/Tiagocamilos/k8s-lab1.git ```
 
 ## Entrar no Projeto
-```bashcd k8s-lab1 ```
+```cd k8s-lab1 ```
 
 # Executar
 
