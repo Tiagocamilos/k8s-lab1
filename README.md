@@ -37,7 +37,7 @@ Adicione ao arquivo `/etc/hosts`:
 127.0.0.1 todolist-grupo-02.local
 ```
 
-- O enunciado especifica a imagem:
+- No documento sobre o lab1, o manifesto do CronJob.yml é referenciado a imagem abaixo:
 
 ```
 curlimages/curl:8
