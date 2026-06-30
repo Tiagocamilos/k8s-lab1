@@ -37,7 +37,7 @@ Adicione ao arquivo `/etc/hosts`:
 127.0.0.1 todolist-grupo-02.local
 ```
 
-- O enunciado especifica a imagem:
+- No documento do lab01 o enunciado especifica a imagem:
 
 ```
 curlimages/curl:8
