@@ -50,3 +50,9 @@ curlimages/curl:8.16.0
 ```
 
 que é compatível com o enunciado e permitiu a execução correta do CronJob.
+
+## Para acessar o projeto Pelo Browser
+
+``` 127.0.1.1 todolist-grupo-02.local ```
+
+
