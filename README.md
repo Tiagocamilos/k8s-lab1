@@ -8,7 +8,8 @@
 ![Node.js](https://img.shields.io/badge/Node.js-v18-339933?logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-v4-000000?logo=express&logoColor=white)
 
-Laboratório desenvolvido utilizando Kubernetes (Kind) para implantação da aplicação TodoList.
+# Laboratório de implantação completa da aplicação **TodoList** em um cluster Kubernetes (Kind), cobrindo os conceitos de Workloads,Acesso e Persistência de Dados
+O **TodoList** é uma aplicação web para gerenciamento de listas de tarefas. Os usuários podem adicionar, concluir e remover itens, contando também com uma rotina automatizada de limpeza periódica via CronJob.
 
 ## Baixar o Projeto
 ```git clone https://github.com/Tiagocamilos/k8s-lab1.git ```
@@ -63,6 +64,6 @@ que é compatível com o enunciado e permitiu a execução correta do CronJob.
 
 ``` http://todolist-grupo-02.local ```
 
-[![Baixar Projeto](https://img.shields.io/badge/Baixar-Projeto-0078D4?logo=github&logoColor=white)](https://github.com/Tiagocamilos/k8s-lab1/archive/main.zip)
+[![Baixar Projeto](https://img.shields.io/badge/Baixar-Projeto-0078D4?logo=github&logoColor=white)](https://github.com/seu-usuario/seu-repo/archive/main.zip)
 
 
