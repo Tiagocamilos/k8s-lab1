@@ -1,9 +1,9 @@
 # Kubernetes Lab 1 - TodoList
-![Kubernetes](https://img.shields.io/badge/Kubernetes-v1.28+-326CE5?logo=kubernetes&logoColor=white)
-![Kind](https://img.shields.io/badge/Kind-v0.20+-000000?logo=kubernetes&logoColor=white)
-![NGINX Ingress](https://img.shields.io/badge/NGINX%20Ingress-v1.8+-009639?logo=nginx&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-v1.28-326CE5?logo=kubernetes&logoColor=white)
+![Kind](https://img.shields.io/badge/Kind-v0.20-000000?logo=kubernetes&logoColor=white)
+![NGINX Ingress](https://img.shields.io/badge/NGINX%20Ingress-v1.8-009639?logo=nginx&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-v3-003B57?logo=sqlite&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-v24+-2496ED?logo=docker&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-v24-2496ED?logo=docker&logoColor=white)
 ![cURL](https://img.shields.io/badge/cURL-v8-073551?logo=curl&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-v18-339933?logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-v4-000000?logo=express&logoColor=white)
@@ -61,6 +61,6 @@ que é compatível com o enunciado e permitiu a execução correta do CronJob.
 
 ## Para acessar o projeto Pelo Browser
 
-``` 127.0.1.1 todolist-grupo-02.local ```
+``` http://todolist-grupo-02.local ```
 
 
