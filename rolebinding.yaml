@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: todolist-rolebinding
+  namespace: todolist-grupo-02
+subjects:
+- kind: ServiceAccount
+  name: todolist-sa
+  namespace: todolist-grupo-02
+roleRef:
+  kind: Role
+  name: todolist-role
+  apiGroup: rbac.authorization.k8s.io
