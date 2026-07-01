@@ -3,39 +3,46 @@ kind: Deployment
 metadata:
   name: todolist-deployment
   namespace: todolist-grupo-02
-
 spec:
   replicas: 2
-
   selector:
     matchLabels:
       app: todolist
-
   template:
     metadata:
       labels:
         app: todolist
-
-
     spec:
+      serviceAccountName: todolist-sa                 # <-- NOVO
       containers:
       - name: todolist
-        image: andreffcastro/k8s-todolist:1.0.0
+        image: andreffcastro/k8s-todolist:1.1.0       # <-- ATUALIZADO
         ports:
-          - containerPort: 5000
-
+        - containerPort: 5000
         envFrom:
-          - configMapRef:
-              name: todolist-config
-
-          - secretRef:
-              name: todolist-secret
-
+        - configMapRef:
+            name: todolist-config
+        - secretRef:
+            name: todolist-secret
+        resources:
+          requests:
+            cpu: "100m"                               # <-- OBRIGATÓRIO para HPA
+        livenessProbe:                                # <-- NOVO
+          httpGet:
+            path: /healthz
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:                               # <-- NOVO
+          httpGet:
+            path: /healthz
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
         volumeMounts:
-          - name: todolist-pvc
-            mountPath: /data
-      
-      volumes:
         - name: todolist-pvc
-          persistentVolumeClaim:
-            claimName: todolist-pvc
+          mountPath: /data
+      volumes:
+      - name: todolist-pvc
+        persistentVolumeClaim:
+          claimName: todolist-pvc
