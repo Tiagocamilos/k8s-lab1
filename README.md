@@ -8,7 +8,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-v18-339933?logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-v4-000000?logo=express&logoColor=white)
 
-# Laboratório de implantação completa da aplicação **TodoList** em um cluster Kubernetes (Kind), cobrindo os conceitos de Workloads,Acesso e Persistência de Dados
+# Laboratório de implantação 1 e 2 completa da aplicação **TodoList** em um cluster Kubernetes (Kind), cobrindo os conceitos de Workloads,Acesso e Persistência de Dados
 O **TodoList** é uma aplicação web para gerenciamento de listas de tarefas. Os usuários podem adicionar, concluir e remover itens, contando também com uma rotina automatizada de limpeza periódica via CronJob.
 
 ## Baixar o Projeto
@@ -26,10 +26,15 @@ kubectl apply -f namespace.yaml
 kubectl apply -f configmap.yaml
 kubectl apply -f secret.yaml
 kubectl apply -f pvc.yaml
-kubectl apply -f deployment.yaml
+kubectl apply -f serviceaccount.yaml   # <-- NOVO
+kubectl apply -f role.yaml             # <-- NOVO
+kubectl apply -f rolebinding.yaml      # <-- NOVO
+kubectl apply -f deployment.yaml       # <-- ATUALIZADO
 kubectl apply -f service.yaml
 kubectl apply -f ingress.yaml
 kubectl apply -f cronjob.yaml
+kubectl apply -f hpa.yaml              # <-- NOVO
+kubectl apply -f pdb.yaml              # <-- NOVO
 ```
 
 ## Observações
@@ -59,6 +64,18 @@ curlimages/curl:8.16.0
 ```
 
 que é compatível com o enunciado e permitiu a execução correta do CronJob.
+
+## Verificações
+
+``` 
+kubectl get all,sa,role,rolebinding,hpa,pdb -n todolist-grupo-02
+```
+# Testar permissões do ServiceAccount
+
+``` 
+kubectl auth can-i get pods --as=system:serviceaccount:todolist-grupo-02:todolist-sa -n todolist-grupo-02
+kubectl auth can-i delete pods --as=system:serviceaccount:todolist-grupo-02:todolist-sa -n todolist-grupo-02
+``` 
 
 ## Para acessar o projeto Pelo Browser
 
