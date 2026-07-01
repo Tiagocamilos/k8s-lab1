@@ -74,6 +74,8 @@ kubectl get all,sa,role,rolebinding,hpa,pdb -n todolist-grupo-02
 
 ``` 
 kubectl auth can-i get pods --as=system:serviceaccount:todolist-grupo-02:todolist-sa -n todolist-grupo-02
+```
+```
 kubectl auth can-i delete pods --as=system:serviceaccount:todolist-grupo-02:todolist-sa -n todolist-grupo-02
 ``` 
 
