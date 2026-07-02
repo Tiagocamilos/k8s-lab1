@@ -1,4 +1,4 @@
-# Kubernetes Lab 1 - TodoList
+# Kubernetes Lab 1 e Lab 2 - TodoList
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-v1.28-326CE5?logo=kubernetes&logoColor=white)
 ![Kind](https://img.shields.io/badge/Kind-v0.20-000000?logo=kubernetes&logoColor=white)
 ![NGINX Ingress](https://img.shields.io/badge/NGINX%20Ingress-v1.8-009639?logo=nginx&logoColor=white)
