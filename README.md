@@ -70,7 +70,7 @@ que é compatível com o enunciado e permitiu a execução correta do CronJob.
 ``` 
 kubectl get all,sa,role,rolebinding,hpa,pdb -n todolist-grupo-02
 ```
-# Testar permissões do ServiceAccount
+## Testar permissões do ServiceAccount
 
 ``` 
 kubectl auth can-i get pods --as=system:serviceaccount:todolist-grupo-02:todolist-sa -n todolist-grupo-02
@@ -83,19 +83,19 @@ kubectl auth can-i delete pods --as=system:serviceaccount:todolist-grupo-02:todo
 ```
 git pull origin main
 ```
-# 1. NOVOS recursos (RBAC)
+## 1. NOVOS recursos (RBAC)
 ```
 kubectl apply -f serviceaccount.yaml
 kubectl apply -f role.yaml
 kubectl apply -f rolebinding.yaml
 ```
 
-# 2. ATUALIZAR o Deployment (imagem 1.1.0, probes, resources, serviceAccountName)
+## 2. ATUALIZAR o Deployment (imagem 1.1.0, probes, resources, serviceAccountName)
 ```
 kubectl apply -f deployment.yaml
 ```
 
-# 3. NOVOS recursos (HPA e PDB)
+## 3. NOVOS recursos (HPA e PDB)
 ```
 kubectl apply -f hpa.yaml
 kubectl apply -f pdb.yaml
