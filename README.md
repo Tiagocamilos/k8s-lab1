@@ -79,6 +79,27 @@ kubectl auth can-i get pods --as=system:serviceaccount:todolist-grupo-02:todolis
 ```
 kubectl auth can-i delete pods --as=system:serviceaccount:todolist-grupo-02:todolist-sa -n todolist-grupo-02
 ``` 
+## Para atualizar para versão 2
+```
+git pull origin main
+```
+# 1. NOVOS recursos (RBAC)
+```
+kubectl apply -f serviceaccount.yaml
+kubectl apply -f role.yaml
+kubectl apply -f rolebinding.yaml
+```
+
+# 2. ATUALIZAR o Deployment (imagem 1.1.0, probes, resources, serviceAccountName)
+```
+kubectl apply -f deployment.yaml
+```
+
+# 3. NOVOS recursos (HPA e PDB)
+```
+kubectl apply -f hpa.yaml
+kubectl apply -f pdb.yaml
+```
 
 ## Para acessar o projeto Pelo Browser
 
