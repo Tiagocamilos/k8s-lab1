@@ -105,6 +105,11 @@ kubectl apply -f pdb.yaml
 
 ``` http://todolist-grupo-02.local ```
 
+## Removendo o projeto
+
+```kubectl delete namespace todolist-grupo-02```
+```rm -rf ~/k8s-lab1```
+
 [![Baixar Projeto](https://img.shields.io/badge/Baixar-Projeto-0078D4?logo=github&logoColor=white)](https://github.com/Tiagocamilos/k8s-lab1/archive/main.zip)
 
 
